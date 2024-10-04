@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Phase 3</title>
+    </head>
+    <body>
+        <h1>DOCTORAL DATABASE</h1>
+        <h2> Display</h2>
+
+        <form method = "post" action = "showInstructor.php" >
+            <button type ="submit">Show Instructors</button>
+        </form>
+        <form method = "post" action = "showPhd.php" >
+            <button type ="submit">Show PhdStudents</button>
+        </form>
+
+        <form method = "post" action = "showCourseTaught.php" >
+            <button type ="submit">Show CourseTaught</button>
+        </form>
+
+        <form method = "post" action = "showPhdCommittee.php" >
+            <button type ="submit">Show PhdCommittee</button>
+        </form>
+
+        <form method = "post" action = "showMilestonepassed.php" >
+            <button type ="submit">Show Milestonepassed</button>
+        </form>
+
+        <!-- For for inserting new instructor in the database -->
+        <form action = "addInstructor.php" method = "post">
+            <h2>Insert new Instructor</h2>
+            <input type = "text" name = "InstructorId" placeholder = "InstructorId" required>
+            <input type = "text" name = "FName" placeholder = "First Name" required>
+            <input type = "text" name = "LName" placeholder = "Last Name" required>
+            <input type = "date" name = "StartDate" placeholder = "YYYY-MM-DD" required>
+            <input type = "text" name = "Degree" placeholder = "Degree" required>
+            <input type = "text" name = "Rank" placeholder = "Rank" required>
+            <input type = "text" name = "Type" placeholder = "Type" required>
+            <button type = "submit"> Add Instructor</button>
+        </form>
+
+        <!-- For for inserting new instructor and linking the new instructor with an existing course and student committee in the database -->
+        <form action = "addCT.php" method = "post">
+            <h2>Insert new Instructor and Link it with the CourseTaught</h2>
+            <input type = "text" name = "InstructorId" placeholder = "InstructorId" required>
+            <input type = "text" name = "CourseId" placeholder = "CourseId" required>
+            <button type = "submit">Add to CourseTaught</button>
+        </form>
+
+        <form action = "addPC.php" method = "post">
+            <h2>Insert new Instructor to PhdCommittee</h2>
+            <input type = "text" name = "InstructorId" placeholder = "InstructorId" required>
+            <input type = "text" name = "StudentId" placeholder = "StudentId" required>
+            <button type = "submit"> Add to PhdCommittee</button>
+        </form>
+
+        <form method="post" action="deleteGRA.php">
+            <h2> Delete GRA student without milestones</h2>
+            <input type="text" name="StudentId" placeholder="GRAStudentID" required>
+            <button type="submit">Delete GRA Student</button>
+        </form>
+    </body>
+</html>
